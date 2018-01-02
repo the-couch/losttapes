@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import contentfulAPI from '../api/contentful'
 
 export default class extends Component {
   constructor (props) {
@@ -7,6 +8,9 @@ export default class extends Component {
     this.state = {
       foo: 'bar'
     }
+  }
+  componentWillMount () {
+
   }
   render () {
     return (
