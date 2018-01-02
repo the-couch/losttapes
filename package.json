@@ -1,0 +1,22 @@
+{
+  "name": "losttapes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "contentful": "^5.0.5",
+    "next": "^4.2.1",
+    "now-env": "^3.0.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
