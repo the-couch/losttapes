@@ -7,7 +7,8 @@
           "styles": "./styles",
           "cards": "./components/cards",
           "components": "./components",
-          "sections": "./components/sections"
+          "sections": "./components/sections",
+          "api": "./api"
         },
         "cwd": "babelrc"
     }],
