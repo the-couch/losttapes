@@ -4,6 +4,7 @@ import contentfulAPI from '../api/contentful'
 import FilmCard from '../components/cards/film'
 import Layout from '../components/layout'
 
+
 export default class extends Component {
   static async getInitialProps () {
     const response = await contentfulAPI.getEntries({

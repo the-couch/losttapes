@@ -1,18 +1,19 @@
 const gray = '#223355'
-import GlobalStyle from '../../styles/global'
+// import GlobalStyle from '../../styles/global'
+import stylesheet from '../../styles/main.css'
 import Link from 'next/link'
 
 export default () => (
   <div>
-    <GlobalStyle />
+    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <style jsx>{`
       .header {
         margin: 40px 0 80px;
       }
     `}</style>
     <div className='header f jcb'>
-      <Link prefetch href='/'><a className='small'>the lost tapes</a></Link>
-      <Link prefetch href='/notes'><a className='italic caps'>Notes</a></Link>
+      <Link href='/'><a className='small'>the lost tapes</a></Link>
+      <Link href='/notes'><a className='italic caps'>Notes</a></Link>
     </div>
   </div>
 )

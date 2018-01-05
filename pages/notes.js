@@ -3,6 +3,7 @@ import 'isomorphic-fetch'
 import contentfulAPI from '../api/contentful'
 import FilmCard from '../components/cards/film'
 import Layout from '../components/layout'
+import marked from 'marked'
 
 export default class extends Component {
   static async getInitialProps () {
@@ -15,14 +16,13 @@ export default class extends Component {
     }
   }
   render () {
-    console.log(this.props)
     return (
       <Layout>
         <style jsx>{`
         `}</style>
         <div>
           <h1>Notes</h1>
-          <p>a place for skateboarding to survice after the vhs</p>
+          <div dangerouslySetInnerHTML={{__html: marked(this.props.page.fields.description)}} />
         </div>
       </Layout>
     )

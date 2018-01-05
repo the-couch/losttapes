@@ -103,10 +103,10 @@ module.exports = () => (
       }
       hr {
         height: 4px;
-        background-color: var(--c1);
+        background-color: #ccc;
       }
       blockquote {
-        border-left: 4px solid var(--c1);
+        border-left: 4px solid #ccc;
         margin: 2em 0;
         padding: 0.5em 0 0.5em 3em;
       }
@@ -133,7 +133,7 @@ module.exports = () => (
         letter-spacing: 0.2em;
       }
       .rte a {
-        color: var(--c1);
+        color: #ccc;
       }
       .rte img {
         max-width: 100%;
