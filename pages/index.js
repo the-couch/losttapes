@@ -30,7 +30,7 @@ export default class extends Component {
         `}</style>
         <div>
           <h1>the lost tapes.</h1>
-          <p>a place for skateboarding to survice after the vhs</p>
+          <p>a place for skateboarding to survive after the vhs</p>
         </div>
         <div className='film-header'><p className='italic caps'>Films</p></div>
         <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
