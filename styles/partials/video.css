@@ -1,0 +1,28 @@
+video {
+  width: 100%;
+}
+
+.video__single {
+  flex-wrap: wrap;
+}
+.video__window {
+  width: 100%;
+}
+.video__parts {
+  width: 100%;
+}
+.video__parts .active {
+  font-weight: bold;
+}
+@media (min-width: 45em) {
+  .video__window {
+    width: 60%;
+  }
+  .video__parts {
+    width: 30%;
+  }
+}
+
+.part__link {
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+
+* {
+  box-sizing: border-box;
+}
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  height: 4px;
+  background-color: #ccc;
+}
+blockquote {
+  border-left: 4px solid #ccc;
+  margin: 2em 0;
+  padding: 0.5em 0 0.5em 3em;
+}
+blockquote * {
+  font-size: 2rem;
+  max-width: 27em;
+}
+pre {
+  padding: 2em;
+  background-color: whitesmoke;
+  word-wrap: normal;
+  overflow: auto;
+}
+pre code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.track {
+  letter-spacing: 0.2em;
+}
+.rte a {
+  color: #ccc;
+}
+.rte img {
+  max-width: 100%;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.f {
+  display: flex;
+}
+.jcb {
+  justify-content: space-between;
+}
+
+.fw {
+  flex-wrap: wrap;
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.fill {
+  height: 100%;
+  width: 100%;
+}
+.fit {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

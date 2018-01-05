@@ -1,172 +1,20 @@
-:root {
-  --gray: #223355;
-}
+@import 'lib/reset';
+@import 'lib/breakpoints';
+@import 'lib/var';
+@import 'lib/colors';
+@import 'lib/display';
+@import 'lib/positioning';
+@import 'lib/flexbox';
+@import 'lib/align';
+@import 'lib/spacing';
+@import 'lib/buttons';
+@import 'lib/forms';
+@import 'lib/lists';
+@import 'lib/typography';
+@import 'lib/z-index';
+@import 'lib/misc';
+@import 'lib/visibility';
+@import 'lib/containers';
 
-* {
-  box-sizing: border-box;
-}
-body, html {
-  padding: 0;
-  margin: 0;
-}
-
-@font-face {
-	font-family: 'Inter';
-	src: url('/static/fonts/Inter-UI-Regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Inter';
-	src: url('/static/fonts/Inter-UI-Italic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-}
-@font-face {
-	font-family: 'Inter';
-	src: url('/static/fonts/Inter-UI-Bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Inter';
-	src: url('/static/fonts/Inter-UI-BoldItalic.woff') format('woff');
-	font-weight: 700;
-	font-style: italic;
-}
-
-::selection {
-  background: var(--gray);
-  color: white;
-}
-::-moz-selection {
-  background: var(--gray);
-  color: white;
-}
-
-html, body {
-  font-family: 'Inter', helvetica;
-  color: var(--gray);
-  background: white;
-}
-
-.px2 {
-  padding: 2rem;
-}
-
-.italic {
-  font-style: italic;
-  letter-spacing: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.caps {
-  text-transform: uppercase;
-}
-
-.ar {
-  text-align: right;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.6em 0;
-  line-height: 1.3;
-}
-h1, .h1 {
-  max-width: 18em;
-  font-size: 3rem;
-}
-h2, .h2 {
-  max-width: 20em;
-}
-h3, .h3 {
-  max-width: 27em;
-}
-h4, .h4 {
-  max-width: 28em;
-}
-h5, .h5 {
-  max-width: 34em;
-}
-h6, .h6 {
-  max-width: 45em;
-}
-.small {
-  font-size: 0.8rem;
-}
-p {
-  font-size: 0.9rem;
-  font-weight: normal;
-  max-width: 40em;
-}
-a {
-  text-decoration: none;
-  color: var(--gray);
-}
-hr {
-  height: 4px;
-  background-color: #ccc;
-}
-blockquote {
-  border-left: 4px solid #ccc;
-  margin: 2em 0;
-  padding: 0.5em 0 0.5em 3em;
-}
-blockquote * {
-  font-size: 2rem;
-  max-width: 27em;
-}
-pre {
-  padding: 2em;
-  background-color: whitesmoke;
-  word-wrap: normal;
-  overflow: auto;
-}
-pre code {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
-  white-space: pre;
-  background: transparent;
-  border: 0;
-}
-.track {
-  letter-spacing: 0.2em;
-}
-.rte a {
-  color: #ccc;
-}
-.rte img {
-  max-width: 100%;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.f {
-  display: flex;
-}
-.jcb {
-  justify-content: space-between;
-}
-
-.fw {
-  flex-wrap: wrap;
-}
-.rel {
-  position: relative;
-}
-.abs {
-  position: absolute;
-}
-.fill {
-  height: 100%;
-  width: 100%;
-}
-.fit {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+@import 'partials/global';
+@import 'partials/video';
