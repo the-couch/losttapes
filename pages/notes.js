@@ -18,8 +18,6 @@ export default class extends Component {
   render () {
     return (
       <Layout>
-        <style jsx>{`
-        `}</style>
         <div>
           <h1>Notes</h1>
           <div dangerouslySetInnerHTML={{__html: marked(this.props.page.fields.description)}} />

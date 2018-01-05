@@ -4,7 +4,9 @@
       "module-resolver", {
         "root": ["."],
         "alias": {
-          "styles": "./styles"
+          "styles": "./styles",
+          "cards": "./components/cards",
+          "sections": "./components/sections"
         },
         "cwd": "babelrc"
     }],
