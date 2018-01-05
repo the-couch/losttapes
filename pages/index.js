@@ -21,6 +21,8 @@ export default class extends Component {
     ))
   }
   render () {
+
+    console.info("%c Built by https://thecouch.nyc", 'background: #021993; color: #fff')
     return (
       <Layout>
         <style jsx>{`
