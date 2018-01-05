@@ -13,9 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^7.2.4",
-    "classnames": "^2.2.5",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.0",
+    "classnames": "^2.2.5",
     "contentful": "^5.0.5",
     "ffx": "^0.5.1",
     "glob": "^7.1.2",
@@ -28,6 +28,7 @@
     "raw-loader": "^0.5.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "tinydate": "^1.0.0"
   }
 }
