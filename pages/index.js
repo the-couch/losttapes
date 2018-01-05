@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import 'isomorphic-fetch'
 import contentfulAPI from '../api/contentful'
-import FilmCard from '../components/cards/film'
+import FilmCard from 'cards/film'
 import Layout from '../components/layout'
 
 

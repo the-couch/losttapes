@@ -20,6 +20,8 @@
     "ffx": "^0.5.1",
     "glob": "^7.1.2",
     "marked": "^0.3.9",
+    "micro": "^9.0.2",
+    "micro-route": "^2.5.0",
     "next": "^4.2.1",
     "node-sass": "^4.7.2",
     "now-env": "^3.0.2",
@@ -30,5 +32,8 @@
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.6",
     "tinydate": "^1.0.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.1.2"
   }
 }
