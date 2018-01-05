@@ -11,8 +11,8 @@ export default () => (
       }
     `}</style>
     <div className='header f jcb'>
-      <Link href='/'><a className='small'>the lost tapes</a></Link>
-      <Link href='/notes'><a className='italic caps'>Notes</a></Link>
+      <Link prefetch href='/'><a className='small'>the lost tapes</a></Link>
+      <Link prefetch href='/notes'><a className='italic caps'>Notes</a></Link>
     </div>
   </div>
 )
