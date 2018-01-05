@@ -5,7 +5,7 @@ import Link from 'next/link'
 const time = tinydate('{DD}/{MM}/{YYYY}')
 
 export default (props) => (
-  <div className='film__card'>
+  <div className='film__card rel'>
     <style jsx>{`
       .color__block {
         height: 0;
@@ -28,6 +28,7 @@ export default (props) => (
         }
       }
     `}</style>
+    <Link href={`/film?title=${props.fields.slug}`}><a className='abs fill fit'></a></Link>
     <div className='color__block' style={{backgroundColor: props.fields.color}}></div>
     <h3><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>
     {props.fields.releasedAt && (<span className='small'>{time(new Date(props.fields.releasedAt))}</span>)}
