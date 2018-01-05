@@ -7,32 +7,23 @@ import Layout from '../components/layout'
 export default class extends Component {
   static async getInitialProps () {
     const response = await contentfulAPI.getEntries({
-      content_type: 'film',
+      content_type: 'notes',
       include: 8
     })
     return {
-      films: response.items
+      page: response.items[0]
     }
   }
-  handleFilms (films) {
-    return films.map((film) => (
-      <FilmCard {...film}  />
-    ))
-  }
   render () {
+    console.log(this.props)
     return (
       <Layout>
         <style jsx>{`
-          .film-header {
-            margin: 40px 0 40px;
-          }
         `}</style>
         <div>
-          <h1>the lost tapes.</h1>
+          <h1>Notes</h1>
           <p>a place for skateboarding to survice after the vhs</p>
         </div>
-        <div className='film-header'><p className='italic caps'>Films</p></div>
-        <div>{this.handleFilms(this.props.films)}</div>
       </Layout>
     )
   }
