@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default () => (
   <div>
     <GlobalStyle />
-    <style jsx global>{`
+    <style jsx>{`
       .header {
         margin: 40px 0 80px;
       }

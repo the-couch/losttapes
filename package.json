@@ -17,9 +17,7 @@
     "ffx": "^0.5.1",
     "next": "^4.2.1",
     "now-env": "^3.0.2",
-    "postcss-cssnext": "2.11.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "styled-jsx-postcss": "^0.2.0"
+    "react-dom": "^16.2.0"
   }
 }

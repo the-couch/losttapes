@@ -1,5 +1,3 @@
-const gray = '#223355'
-
 module.exports = () => (
   <div>
     <style global jsx>{`
@@ -36,17 +34,17 @@ module.exports = () => (
       }
 
       ::selection {
-        background: ${gray};
+        background: #223355;
         color: white;
       }
       ::-moz-selection {
-        background: ${gray};
+        background: #223355;
         color: white;
       }
 
       html, body {
         font-family: 'Inter', helvetica;
-        color: ${gray};
+        color: #223355;
         background: white;
       }
 
@@ -101,7 +99,7 @@ module.exports = () => (
       }
       a {
         text-decoration: none;
-        color: ${gray};
+        color: #223355;
       }
       hr {
         height: 4px;
