@@ -9,17 +9,15 @@ export default (props) => (
     <style jsx>{`
       .color__block {
         height: 0;
-        padding-bottom: 40%;
+        padding-bottom: 80%;
       }
       .film__card {
         width: 100%;
+        margin-bottom: 30px;
       }
       @media (min-width: 45em) {
         .film__card {
           width: 30%;
-        }
-        .color__block {
-          padding-bottom: 80%;
         }
       }
       @media (min-width: 65em) {
