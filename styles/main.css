@@ -1,3 +1,7 @@
+:root {
+  --gray: #223355;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -32,17 +36,17 @@ body, html {
 }
 
 ::selection {
-  background: #223355;
+  background: var(--gray);
   color: white;
 }
 ::-moz-selection {
-  background: #223355;
+  background: var(--gray);
   color: white;
 }
 
 html, body {
   font-family: 'Inter', helvetica;
-  color: #223355;
+  color: var(--gray);
   background: white;
 }
 
@@ -97,7 +101,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: #223355;
+  color: var(--gray);
 }
 hr {
   height: 4px;
