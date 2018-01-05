@@ -17,11 +17,19 @@ export default class extends Component {
   render () {
     const {
       title,
-      releasedAt
+      releasedAt,
+      company,
+      videoUrl
     } = this.props.film.fields
+
+    console.log('yo', this.props.film)
     return (
       <Layout>
         <h3>{title}</h3>
+        {company && (<h5>{company.fields.name}</h5>)}
+        {videoUrl && (
+          <video src={videoUrl} controls />
+        )}
       </Layout>
     )
   }

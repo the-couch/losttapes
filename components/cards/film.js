@@ -20,11 +20,6 @@ export default (props) => (
           width: 30%;
         }
       }
-      @media (min-width: 65em) {
-        .film__card {
-          width: 22%;
-        }
-      }
     `}</style>
     <Link href={`/film?title=${props.fields.slug}`}><a className='abs fill fit'></a></Link>
     <div className='color__block' style={{backgroundColor: props.fields.color}}></div>
