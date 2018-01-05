@@ -17,7 +17,7 @@ export default class extends Component {
   }
   handleFilms (films) {
     return films.map((film) => (
-      <FilmCard {...film}  />
+      <FilmCard key={film.sys.id} {...film}  />
     ))
   }
   render () {
@@ -33,7 +33,7 @@ export default class extends Component {
           <p>a place for skateboarding to survice after the vhs</p>
         </div>
         <div className='film-header'><p className='italic caps'>Films</p></div>
-        <div>{this.handleFilms(this.props.films)}</div>
+        <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
       </Layout>
     )
   }

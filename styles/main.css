@@ -150,3 +150,7 @@ pre code {
 .jcb {
   justify-content: space-between;
 }
+
+.fw {
+  flex-wrap: wrap;
+}
