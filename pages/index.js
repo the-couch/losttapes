@@ -31,7 +31,7 @@ export default class extends Component {
           }
         `}</style>
         <div>
-          <h1>the lost tapes.</h1>
+          <h1>video days</h1>
           <p>a place for skateboarding to survive after the vhs</p>
         </div>
         <div className='film-header'><p className='italic caps'>Films</p></div>

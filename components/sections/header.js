@@ -6,11 +6,11 @@ import Link from 'next/link'
 export default () => (
   <div>
     <Head>
-      <title>the lost tapes</title>
+      <title>video days</title>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name='description' content="a place for skateboarding to live after the vhs" />
       <meta name='keywords' content='skateboarding, archive, collection, vhs' />
-      <meta name='og:url' content='https://thelosttapes.now.sh' />
+      <meta name='og:url' content='https://video-days.com' />
       <meta name='fragment' content='!' />
       <meta http-equiv='Accept-CH' content='DPR, Width, Viewport-Width' />
     </Head>
@@ -21,7 +21,7 @@ export default () => (
       }
     `}</style>
     <div className='header f jcb'>
-      <Link href='/'><a className='small'>the lost tapes</a></Link>
+      <Link href='/'><a className='small'>video days</a></Link>
       <Link href='/notes'><a className='italic caps'>Notes</a></Link>
     </div>
   </div>

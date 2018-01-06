@@ -73,7 +73,7 @@ export default class extends Component {
           </div>
           <div className='ar video__parts'>
             <h5>Parts</h5>
-            {this.displayAllParts(parts)}
+            {parts && this.displayAllParts(parts)}
           </div>
         </div>
       </Layout>
