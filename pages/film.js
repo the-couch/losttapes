@@ -20,6 +20,22 @@ export default class extends Component {
       film: response.items[0]
     }
   }
+  watchVideo () {
+    console.log('watch the video');
+    if (this.props.film.fields.parts) {
+      const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
+      videoDom.addEventListener('ended', () => {
+        if (this.state.activePart < this.props.film.fields.parts.length) {
+          this.setState({
+            activePart: this.state.activePart + 1
+          })
+        }
+      })
+    }
+  }
+  componentDidMount () {
+    this.watchVideo()
+  }
   componentWillUpdate () {
     setTimeout(() => {
 
