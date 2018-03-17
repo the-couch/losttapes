@@ -21,7 +21,6 @@ export default class extends Component {
     }
   }
   watchVideo () {
-    console.log('watch the video');
     if (this.props.film.fields.parts) {
       const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
       videoDom.addEventListener('ended', () => {
@@ -35,6 +34,7 @@ export default class extends Component {
   }
   componentDidMount () {
     this.watchVideo()
+    console.log('stuff', this)
   }
   componentWillUpdate () {
     setTimeout(() => {
@@ -75,21 +75,25 @@ export default class extends Component {
     } = this.props.film.fields
 
     return (
-      <Layout>
-        <h3>{title}</h3>
-        {company && (<h5>{company.fields.name}</h5>)}
-        <div className='f jcb video__single'>
-          <div className='video__window'>
-            {videoUrl && (
-              <video src={videoUrl} controls />
-            )}
-            {parts && (
-              <div>{this.handleVideoParts(parts)}</div>
-            )}
+      <Layout type={`film`}>
+        <div className='video__header px2'>
+          <div className='f jcb video__single'>
+            <div className='video__window'>
+              {videoUrl && (
+                <video src={videoUrl} controls />
+              )}
+              {parts && (
+                <div>{this.handleVideoParts(parts)}</div>
+              )}
+            </div>
+            <div className='ar video__parts'>
+              <h5>Parts</h5>
+              {parts && this.displayAllParts(parts)}
+            </div>
           </div>
-          <div className='ar video__parts'>
-            <h5>Parts</h5>
-            {parts && this.displayAllParts(parts)}
+          <div className=''>
+            <h3>{title}</h3>
+            {company && (<h5>{company.fields.name}</h5>)}
           </div>
         </div>
       </Layout>

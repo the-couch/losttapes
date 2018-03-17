@@ -1,9 +1,9 @@
 import Header from 'sections/header'
 import Footer from 'sections/footer'
 
-export default ({children}) => (
-  <div className='px2 container'>
-    <Header />
+export default ({children, type}) => (
+  <div className='container'>
+    <Header type={type} />
     <div>{children}</div>
     <Footer />
   </div>
