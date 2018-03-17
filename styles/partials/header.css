@@ -1,0 +1,12 @@
+.header {
+  border-bottom: 1px solid black;
+}
+
+.header__reverse {
+  border-color: white;
+  background-color: black;
+}
+
+.header__reverse a {
+  color: white;
+}

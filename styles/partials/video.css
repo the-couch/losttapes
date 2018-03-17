@@ -4,6 +4,8 @@ video {
 
 .video__single {
   flex-wrap: wrap;
+  background-color: black;
+  color: white;
 }
 .video__window {
   width: 100%;

@@ -2,6 +2,7 @@ const gray = '#223355'
 import Head from 'next/head'
 import stylesheet from '../../styles/main.css'
 import Link from 'next/link'
+import cx from 'classnames'
 
 export default (props, context) => (
   <div>
@@ -15,13 +16,9 @@ export default (props, context) => (
       <meta http-equiv='Accept-CH' content='DPR, Width, Viewport-Width' />
     </Head>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <style jsx>{`
-      .header {
-        margin: 10px 0 10px;
-      }
-    `}</style>
-    {console.log('sup?', context)}
-    <div className='header f jcc'>
+    <div className={cx('header f jcc px1', {
+      'header__reverse': props.type === 'film'
+    })}>
       <Link href='/'><a className='small caps'>video days</a></Link>
       {/* <Link href='/notes'><a className='italic caps'>Notes</a></Link> */}
     </div>

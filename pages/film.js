@@ -76,8 +76,8 @@ export default class extends Component {
 
     return (
       <Layout type={`film`}>
-        <div className='video__header px2'>
-          <div className='f jcb video__single'>
+        <div className='video__single px2'>
+          <div className='f jcb'>
             <div className='video__window'>
               {videoUrl && (
                 <video src={videoUrl} controls />
