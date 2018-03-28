@@ -25,17 +25,10 @@ export default class extends Component {
     console.info("%c Built by https://thecouch.nyc", 'background: #021993; color: #fff')
     return (
       <Layout>
-        <style jsx>{`
-          .film-header {
-            margin: 40px 0 40px;
-          }
-        `}</style>
-        <div>
-          <h1>video days</h1>
-          <p>a place for skateboarding to survive after the vhs</p>
+        <div className='px2'>
+          <div className='block__header fill-h ac px1'><span className='ls1 caps'>Films</span></div>
+          <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
         </div>
-        <div className='film-header'><p className='italic caps'>Films</p></div>
-        <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
       </Layout>
     )
   }

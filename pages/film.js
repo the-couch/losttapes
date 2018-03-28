@@ -2,12 +2,14 @@ import { Component } from 'react'
 import Layout from 'components/layout'
 import 'isomorphic-fetch'
 import contentfulAPI from 'api/contentful'
+import cx from 'classnames'
 
 export default class extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      activePart: 0
+      activePart: 0,
+      showContents: false
     }
   }
   static async getInitialProps ({query}) {
@@ -34,7 +36,6 @@ export default class extends Component {
   }
   componentDidMount () {
     this.watchVideo()
-    console.log('stuff', this)
   }
   componentWillUpdate () {
     setTimeout(() => {
@@ -74,25 +75,36 @@ export default class extends Component {
       parts
     } = this.props.film.fields
 
+    const {
+      showContents
+    } = this.state
+
     return (
       <Layout type={`film`}>
         <div className='video__single px2'>
           <div className='f jcb'>
-            <div className='video__window'>
+            <div className='video__window rel'>
               {videoUrl && (
                 <video src={videoUrl} controls />
               )}
               {parts && (
                 <div>{this.handleVideoParts(parts)}</div>
               )}
-            </div>
-            <div className='ar video__parts'>
-              <h5>Parts</h5>
-              {parts && this.displayAllParts(parts)}
+
+              <div className={cx('al px2 video__parts abs right bottom', {
+                'show': showContents
+              })}>
+              <div onClick={() => this.setState({ showContents: false })} className='video__parts_close abs right top'>x</div>
+              <h5 className='caps'>Chapters</h5>
+                {parts && this.displayAllParts(parts)}
+              </div>
+              <div onClick={() => this.setState({ showContents: !showContents })} className='abs bottom right f jcc aic video__part_toggle'>
+                <span className='lines' />
+              </div>
             </div>
           </div>
           <div className=''>
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             {company && (<h5>{company.fields.name}</h5>)}
           </div>
         </div>

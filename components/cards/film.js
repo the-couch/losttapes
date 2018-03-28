@@ -9,6 +9,8 @@ export default (props) => (
     <style jsx>{`
       .color__block {
         height: 0;
+        background-size: cover;
+        background-position: center center;
         padding-bottom: 80%;
       }
       .film__card {
@@ -21,9 +23,10 @@ export default (props) => (
         }
       }
     `}</style>
+    {console.log('sup props', props)}
     <Link href={`/film?title=${props.fields.slug}`}><a className='abs fill fit'></a></Link>
-    <div className='color__block' style={{backgroundColor: props.fields.color}}></div>
-    <h3><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>
+    <div className='color__block' style={{backgroundImage: 'url(' + props.fields.cover.fields.file.url + ')'}} />
+    <h3 className='caps ls1'><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>
     {props.fields.releasedAt && (<span className='small'>{time(new Date(props.fields.releasedAt))}</span>)}
   </div>
 )
