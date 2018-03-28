@@ -16,14 +16,14 @@ export default (props) => (
       .film__card {
         width: 100%;
         margin-bottom: 30px;
+
       }
       @media (min-width: 45em) {
         .film__card {
-          width: 30%;
+          width: 23%;
         }
       }
     `}</style>
-    {console.log('sup props', props)}
     <Link href={`/film?title=${props.fields.slug}`}><a className='abs fill fit'></a></Link>
     <div className='color__block' style={{backgroundImage: 'url(' + props.fields.cover.fields.file.url + ')'}} />
     <h3 className='caps ls1'><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>

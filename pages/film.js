@@ -3,12 +3,14 @@ import Layout from 'components/layout'
 import 'isomorphic-fetch'
 import contentfulAPI from 'api/contentful'
 import cx from 'classnames'
+import FilmCard from 'cards/film'
 
 export default class extends Component {
   constructor (props) {
     super(props)
     this.state = {
       activePart: 0,
+      videos: [],
       showContents: false
     }
   }
@@ -36,6 +38,19 @@ export default class extends Component {
   }
   componentDidMount () {
     this.watchVideo()
+  }
+  componentWillMount () {
+    const self = this
+    const moreVideos = contentfulAPI.getEntries({
+      content_type: 'film',
+      include: 8,
+      limit: 4
+    })
+    moreVideos.then((res) => {
+      self.setState({
+        videos: res.items
+      })
+    })
   }
   componentWillUpdate () {
     setTimeout(() => {
@@ -66,6 +81,11 @@ export default class extends Component {
       )
     })
   }
+  handleFilms (films) {
+    return films.map((film) => (
+      <FilmCard key={film.sys.id} {...film}  />
+    ))
+  }
   render () {
     const {
       title,
@@ -78,7 +98,7 @@ export default class extends Component {
     const {
       showContents
     } = this.state
-
+    console.log('this state', this.state)
     return (
       <Layout type={`film`}>
         <div className='video__single px2'>
@@ -106,6 +126,12 @@ export default class extends Component {
           <div className=''>
             <h2>{title}</h2>
             {company && (<h5>{company.fields.name}</h5>)}
+          </div>
+        </div>
+        <div className='px2 mt2'>
+          <div className='block__header fill-h ac px1'><span className='ls1 caps'>Additional</span></div>
+          <div className='f jcb fw'>
+            {this.handleFilms(this.state.videos)}
           </div>
         </div>
       </Layout>
