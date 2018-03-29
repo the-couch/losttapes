@@ -20,6 +20,7 @@ video {
   opacity: 0;
   height: 200px;
   overflow-y: scroll;
+  user-select: none;
   @media (--m) {
     height: auto;
   }
@@ -27,6 +28,7 @@ video {
 
 .video__parts.show {
   opacity: 1;
+  user-select: visible;
 }
 
 .video__parts .active {
@@ -121,6 +123,6 @@ video {
 
 
 .block__header {
-  border: 1px solid black;
+  border: 1px solid white;
   margin-bottom: 2rem;
 }

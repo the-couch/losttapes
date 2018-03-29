@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Nunito+Sans');
 
 
+@font-face {
+font-family: 'Alte Haas Grotesk';
+font-style: normal;
+font-weight: normal;
+src: local('Alte Haas Grotesk'), url('static/fonts/AlteHaasGroteskRegular.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Alte Haas Grotesk Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Alte Haas Grotesk Bold'), url('static/fonts/AlteHaasGroteskBold.woff') format('woff');
+}
+
 ::selection {
   background: var(--gray);
   color: white;
@@ -11,9 +26,8 @@
 }
 
 html, body {
-	font-family: 'Nunito Sans', sans-serif;
-  color: var(--gray);
-  background: white;
+  font-family: 'Alte Haas Grotesk';
+  color: white;
 }
 
 .px2 {
@@ -76,5 +90,5 @@ p {
 }
 a {
   text-decoration: none;
-  color: var(--gray);
+  color: white;
 }
