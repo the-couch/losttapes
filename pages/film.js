@@ -98,7 +98,7 @@ export default class extends Component {
     const {
       showContents
     } = this.state
-    console.log('this state', this.state)
+
     return (
       <Layout type={`film`}>
         <div className='video__single px2'>
