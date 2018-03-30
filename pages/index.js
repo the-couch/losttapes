@@ -3,8 +3,17 @@ import 'isomorphic-fetch'
 import contentfulAPI from '../api/contentful'
 import FilmCard from 'cards/film'
 import Layout from '../components/layout'
+import ReactGA from 'react-ga'
 
 import Link from 'next/link'
+
+const initGA = () => {
+  ReactGA.initialize('UA-116652491-1')
+}
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname })
+  ReactGA.pageview(window.location.pathname)
+}
 
 export default class extends Component {
   static async getInitialProps () {
@@ -15,6 +24,10 @@ export default class extends Component {
     return {
       films: response.items
     }
+  }
+  componentDidMount () {
+    initGA()
+    logPageView()
   }
   handleFilms (films) {
     return films.map((film) => {

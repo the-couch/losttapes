@@ -1,9 +1,19 @@
 import { Component } from 'react'
 import Layout from 'components/layout'
+import ReactGA from 'react-ga'
 import 'isomorphic-fetch'
 import contentfulAPI from 'api/contentful'
 import cx from 'classnames'
 import FilmCard from 'cards/film'
+
+
+const initGA = () => {
+  ReactGA.initialize('UA-116652491-1')
+}
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname })
+  ReactGA.pageview(window.location.pathname)
+}
 
 export default class extends Component {
   constructor (props) {
@@ -38,6 +48,8 @@ export default class extends Component {
   }
   componentDidMount () {
     this.watchVideo()
+    initGA()
+    logPageView()
   }
   componentWillMount () {
     const self = this
