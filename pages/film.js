@@ -6,13 +6,12 @@ import contentfulAPI from 'api/contentful'
 import cx from 'classnames'
 import FilmCard from 'cards/film'
 
-
 const initGA = () => {
   ReactGA.initialize('UA-116652491-1')
 }
-const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
+const logPageView = (url) => {
+  ReactGA.set({ page: url.asPath })
+  ReactGA.pageview(url.asPath)
 }
 
 export default class extends Component {
@@ -49,7 +48,7 @@ export default class extends Component {
   componentDidMount () {
     this.watchVideo()
     initGA()
-    logPageView()
+    logPageView(this.props.url)
   }
   componentWillMount () {
     const self = this
