@@ -79,6 +79,8 @@ export default class extends Component {
         videos: res.items
       })
     })
+    initGA()
+    logPageView(this.props.url)
   }
   componentWillUpdate () {
     setTimeout(() => {
