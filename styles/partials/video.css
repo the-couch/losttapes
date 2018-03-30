@@ -16,7 +16,7 @@ video {
   max-width: 300px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid white;
-  bottom: 40px;
+  bottom: 38px;
   opacity: 0;
   height: 200px;
   overflow-y: scroll;
@@ -55,6 +55,7 @@ video {
   height: 40px;
   border: 1px solid white;
   cursor: pointer;
+  bottom: -2px;
 }
 
 .video__parts_close {

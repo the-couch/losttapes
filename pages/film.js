@@ -118,9 +118,11 @@ export default class extends Component {
               <h5 className='caps'>Chapters</h5>
                 {parts && this.displayAllParts(parts)}
               </div>
-              <div onClick={() => this.setState({ showContents: !showContents })} className='abs bottom right f jcc aic video__part_toggle'>
-                <span className='lines' />
-              </div>
+              {parts && (
+                <div onClick={() => this.setState({ showContents: !showContents })} className='abs bottom right f jcc aic video__part_toggle'>
+                  <span className='lines' />
+                </div>
+              )}
             </div>
           </div>
           <div className=''>
