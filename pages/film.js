@@ -41,9 +41,30 @@ export default class extends Component {
   }
   componentWillMount () {
     const self = this
+    const min = -10
+    const max = 10
+    const random = Math.floor(Math.random() * (max - min + 1)) + min
     const moreVideos = contentfulAPI.getEntries({
       content_type: 'film',
       include: 8,
+      skip: random,
+      limit: 4
+    })
+    moreVideos.then((res) => {
+      self.setState({
+        videos: res.items
+      })
+    })
+  }
+  componentWillReceiveProps () {
+    const self = this
+    const min = 0
+    const max = 10
+    const random = Math.floor(Math.random() * (max - min + 1)) + min
+    const moreVideos = contentfulAPI.getEntries({
+      content_type: 'film',
+      include: 8,
+      skip: random,
       limit: 4
     })
     moreVideos.then((res) => {
@@ -54,9 +75,10 @@ export default class extends Component {
   }
   componentWillUpdate () {
     setTimeout(() => {
-
-      const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
-      videoDom.play()
+      if (this.props.film.fields.parts) {
+        const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
+        videoDom.play()
+      }
     }, 200)
   }
   handleVideoParts (parts) {

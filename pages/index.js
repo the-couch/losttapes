@@ -30,7 +30,7 @@ export default class extends Component {
       if (film.fields.slug === 'fucktards') {
         return (
           <div className='fill-h film__card rel'>
-            <Link prefetch href={`/film?title=${film.fields.slug}`} as={film.fields.slug}><a className='abs z5 fill fit'></a></Link>
+            <Link prefetch href={`/film?title=${film.fields.slug}`}><a className='abs z5 fill fit'></a></Link>
             <h4 className='abs cw caps ls1'>{film.fields.title}</h4>
             <img className='fill-h' src={film.fields.cover.fields.file.url} />
           </div>
