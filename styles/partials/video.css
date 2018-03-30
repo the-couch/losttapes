@@ -21,6 +21,7 @@ video {
   height: 200px;
   overflow-y: scroll;
   user-select: none;
+  z-index: -1;
   @media (--m) {
     height: auto;
   }
@@ -28,6 +29,7 @@ video {
 
 .video__parts.show {
   opacity: 1;
+  z-index: 20;
   user-select: visible;
 }
 

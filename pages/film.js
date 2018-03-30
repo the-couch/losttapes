@@ -41,9 +41,7 @@ export default class extends Component {
   }
   componentWillMount () {
     const self = this
-    const min = -10
-    const max = 10
-    const random = Math.floor(Math.random() * (max - min + 1)) + min
+    const random = Math.floor(Math.random() * 10) + 1
     const moreVideos = contentfulAPI.getEntries({
       content_type: 'film',
       include: 8,
@@ -58,9 +56,7 @@ export default class extends Component {
   }
   componentWillReceiveProps () {
     const self = this
-    const min = 0
-    const max = 10
-    const random = Math.floor(Math.random() * (max - min + 1)) + min
+    const random = Math.floor(Math.random() * 10) + 1
     const moreVideos = contentfulAPI.getEntries({
       content_type: 'film',
       include: 8,
