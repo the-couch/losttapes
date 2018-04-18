@@ -3,7 +3,17 @@ import 'isomorphic-fetch'
 import contentfulAPI from '../api/contentful'
 import FilmCard from 'cards/film'
 import Layout from '../components/layout'
+import ReactGA from 'react-ga'
 
+import Link from 'next/link'
+
+const initGA = () => {
+  ReactGA.initialize('UA-116652491-1')
+}
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname })
+  ReactGA.pageview(window.location.pathname)
+}
 
 export default class extends Component {
   static async getInitialProps () {
@@ -15,27 +25,41 @@ export default class extends Component {
       films: response.items
     }
   }
+  componentDidMount () {
+    initGA()
+    logPageView()
+  }
   handleFilms (films) {
-    return films.map((film) => (
-      <FilmCard key={film.sys.id} {...film}  />
-    ))
+    return films.map((film) => {
+      if (film.fields.slug !== 'fucktards') {
+        return (
+          <FilmCard key={film.sys.id} {...film} />
+        )
+      }
+    })
+  }
+  handleFeatured (films) {
+    return films.map((film) => {
+      if (film.fields.slug === 'fucktards') {
+        return (
+          <div className='fill-h film__card rel'>
+            <Link prefetch href={`/film?title=${film.fields.slug}`}><a className='abs z5 fill fit'></a></Link>
+            <h4 className='abs cw caps ls1'>{film.fields.title}</h4>
+            <img className='fill-h' src={film.fields.cover.fields.file.url} />
+          </div>
+        )
+      }
+    })
   }
   render () {
-
     console.info("%c Built by https://thecouch.nyc", 'background: #021993; color: #fff')
     return (
       <Layout>
-        <style jsx>{`
-          .film-header {
-            margin: 40px 0 40px;
-          }
-        `}</style>
-        <div>
-          <h1>video days</h1>
-          <p>a place for skateboarding to survive after the vhs</p>
+        <div className='px2'>
+          <div className='pb2 home__featured rel'>{this.handleFeatured(this.props.films)}</div>
+          <div className='block__header fill-h ac px1'><span className='ls1 caps'>Films</span></div>
+          <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
         </div>
-        <div className='film-header'><p className='italic caps'>Films</p></div>
-        <div className='f jcb fw'>{this.handleFilms(this.props.films)}</div>
       </Layout>
     )
   }

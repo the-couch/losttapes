@@ -18,7 +18,7 @@ export default (props, context) => (
     <div className={cx('header f jcc px1', {
       'header__reverse': props.type === 'film'
     })}>
-      <Link href='/'><a className='small caps'>video days</a></Link>
+      <Link href='/'><a className='ls1 caps'>video days</a></Link>
       {/* <Link href='/notes'><a className='italic caps'>Notes</a></Link> */}
     </div>
   </div>

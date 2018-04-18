@@ -1,5 +1,8 @@
 .header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  a {
+    color: white;
+  }
 }
 
 .header__reverse {
@@ -9,4 +12,5 @@
 
 .header__reverse a {
   color: white;
+  font-size: 1.1rem;
 }

@@ -1,13 +1,26 @@
 import { Component } from 'react'
 import Layout from 'components/layout'
+import ReactGA from 'react-ga'
 import 'isomorphic-fetch'
 import contentfulAPI from 'api/contentful'
+import cx from 'classnames'
+import FilmCard from 'cards/film'
+
+const initGA = () => {
+  ReactGA.initialize('UA-116652491-1')
+}
+const logPageView = (url) => {
+  ReactGA.set({ page: url.asPath })
+  ReactGA.pageview(url.asPath)
+}
 
 export default class extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      activePart: 0
+      activePart: 0,
+      videos: [],
+      showContents: false
     }
   }
   static async getInitialProps ({query}) {
@@ -34,13 +47,47 @@ export default class extends Component {
   }
   componentDidMount () {
     this.watchVideo()
-    console.log('stuff', this)
+    initGA()
+    logPageView(this.props.url)
+  }
+  componentWillMount () {
+    const self = this
+    const random = Math.floor(Math.random() * 10) + 1
+    const moreVideos = contentfulAPI.getEntries({
+      content_type: 'film',
+      include: 8,
+      skip: random,
+      limit: 4
+    })
+    moreVideos.then((res) => {
+      self.setState({
+        videos: res.items
+      })
+    })
+  }
+  componentWillReceiveProps () {
+    const self = this
+    const random = Math.floor(Math.random() * 10) + 1
+    const moreVideos = contentfulAPI.getEntries({
+      content_type: 'film',
+      include: 8,
+      skip: random,
+      limit: 4
+    })
+    moreVideos.then((res) => {
+      self.setState({
+        videos: res.items
+      })
+    })
+    initGA()
+    logPageView(this.props.url)
   }
   componentWillUpdate () {
     setTimeout(() => {
-
-      const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
-      videoDom.play()
+      if (this.props.film.fields.parts) {
+        const videoDom = document.getElementById(this.props.film.fields.parts[this.state.activePart].sys.id)
+        videoDom.play()
+      }
     }, 200)
   }
   handleVideoParts (parts) {
@@ -65,6 +112,11 @@ export default class extends Component {
       )
     })
   }
+  handleFilms (films) {
+    return films.map((film) => (
+      <FilmCard key={film.sys.id} {...film}  />
+    ))
+  }
   render () {
     const {
       title,
@@ -74,26 +126,45 @@ export default class extends Component {
       parts
     } = this.props.film.fields
 
+    const {
+      showContents
+    } = this.state
+
     return (
       <Layout type={`film`}>
         <div className='video__single px2'>
           <div className='f jcb'>
-            <div className='video__window'>
+            <div className='video__window rel'>
               {videoUrl && (
                 <video src={videoUrl} controls />
               )}
               {parts && (
                 <div>{this.handleVideoParts(parts)}</div>
               )}
-            </div>
-            <div className='ar video__parts'>
-              <h5>Parts</h5>
-              {parts && this.displayAllParts(parts)}
+
+              <div className={cx('al px2 video__parts abs right bottom', {
+                'show': showContents
+              })}>
+              <div onClick={() => this.setState({ showContents: false })} className='video__parts_close abs right top'>x</div>
+              <h5 className='caps'>Chapters</h5>
+                {parts && this.displayAllParts(parts)}
+              </div>
+              {parts && (
+                <div onClick={() => this.setState({ showContents: !showContents })} className='abs bottom right f jcc aic video__part_toggle'>
+                  <span className='lines' />
+                </div>
+              )}
             </div>
           </div>
           <div className=''>
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             {company && (<h5>{company.fields.name}</h5>)}
+          </div>
+        </div>
+        <div className='px2 mt2'>
+          <div className='block__header fill-h ac px1'><span className='ls1 caps'>Additional</span></div>
+          <div className='f jcb fw'>
+            {this.handleFilms(this.state.videos)}
           </div>
         </div>
       </Layout>

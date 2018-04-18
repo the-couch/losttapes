@@ -9,22 +9,123 @@ video {
 }
 .video__window {
   width: 100%;
+  /* min-height: 80vw; */
 }
 .video__parts {
   width: 100%;
-}
-.video__parts .active {
-  font-weight: bold;
-}
-@media (min-width: 45em) {
-  .video__window {
-    width: 60%;
-  }
-  .video__parts {
-    width: 30%;
+  max-width: 300px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  bottom: 38px;
+  opacity: 0;
+  height: 200px;
+  overflow-y: scroll;
+  user-select: none;
+  z-index: -1;
+  @media (--m) {
+    height: auto;
   }
 }
 
+.video__parts.show {
+  opacity: 1;
+  z-index: 20;
+  user-select: visible;
+}
+
+.video__parts .active {
+  font-weight: bold;
+  margin-lefT: 10px;
+}
+
+.video__parts .active:before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  margin-left: -9px;
+}
+
 .part__link {
+  position: relative;
   cursor: pointer;
+  padding: 2px 0;
+}
+
+.video__part_toggle {
+  /* background: red; */
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  cursor: pointer;
+  bottom: -2px;
+}
+
+.video__parts_close {
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+}
+
+.video__part_toggle:hover span {
+  opacity: 1;
+}
+
+.video__part_toggle span {
+  opacity: 0.5;
+  width: 60%;
+  height: 1px;
+  background-color: white;
+  position: relative;
+}
+
+.video__part_toggle span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: white;
+  top: -5px;
+}
+
+.video__part_toggle span:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: white;
+  top: 5px;
+}
+
+.color__block {
+  background-color: black;
+  transition: opacity 0.6;
+  position: relative;
+
+  &:before {
+    transition: background .3s;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+  }
+}
+
+.film__card {
+  cursor: pointer;
+  &:hover {
+    .color__block {
+      &:before {
+        background-color: rgba(0,0,0,.45);
+      }
+    }
+  }
+}
+
+
+.block__header {
+  border: 1px solid white;
+  margin-bottom: 2rem;
 }
