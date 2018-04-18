@@ -1,4 +1,3 @@
-const gray = '#223355'
 import Head from 'next/head'
 import stylesheet from '../../styles/main.css'
 import Link from 'next/link'
@@ -9,7 +8,7 @@ export default (props, context) => (
     <Head>
       <title>video days</title>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      <meta name='description' content="a place for skateboarding to live after the vhs" />
+      <meta name='description' content='a place for skateboarding to live after the vhs' />
       <meta name='keywords' content='skateboarding, archive, collection, vhs' />
       <meta name='og:url' content='https://video-days.com' />
       <meta name='fragment' content='!' />
