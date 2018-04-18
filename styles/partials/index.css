@@ -8,6 +8,9 @@
       opacity: 0;
     }
     .film__card {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
       &:hover {
         &:before {
           background: rgba(0,0,0, .5);
@@ -15,6 +18,11 @@
         h4 {
           opacity: 1;
         }
+      }
+      img {
+        height: 0;
+        padding-bottom: 58%;
+        opacity: 0;
       }
       &:before {
         transition: background .3s;

@@ -41,10 +41,13 @@ export default class extends Component {
   handleFeatured (films) {
     return films.map((film) => {
       if (film.fields.slug === 'fucktards') {
+        const background = {
+          backgroundImage: 'url(' + film.fields.cover.fields.file.url + ')'
+        }
         return (
-          <div className='fill-h film__card rel'>
+          <div className='fill-h film__card rel' style={background}>
             <Link prefetch href={`/film?title=${film.fields.slug}`}><a className='abs z5 fill fit'></a></Link>
-            <h4 className='abs cw caps ls1'>{film.fields.title}</h4>
+            <h4 className='abs cw caps ls1 z6'>{film.fields.title}</h4>
             <img className='fill-h' src={film.fields.cover.fields.file.url} />
           </div>
         )
