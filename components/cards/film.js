@@ -2,7 +2,7 @@ import { Component } from 'react'
 import tinydate from 'tinydate'
 import Link from 'next/link'
 
-const time = tinydate('{DD}/{MM}/{YYYY}')
+const time = tinydate('{YYYY}')
 
 export default (props) => (
   <div className='film__card rel'>
@@ -31,7 +31,9 @@ export default (props) => (
     `}</style>
     <Link prefetch href={`/film?title=${props.fields.slug}`}><a className='abs z5 fill fit'></a></Link>
     <div className='color__block' style={{backgroundImage: 'url(' + props.fields.cover.fields.file.url + ')'}} />
-    <h3 className='caps ls1'><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>
-    {props.fields.releasedAt && (<span className='small'>{time(new Date(props.fields.releasedAt))}</span>)}
+    <div className='f jcb aic'>
+      <h3 className='caps ls1 small'><Link href={`/film?title=${props.fields.slug}`}><a>{props.fields.title}</a></Link></h3>
+      {props.fields.releasedAt && (<span className='small ls1 ml1 caps'>{time(new Date(props.fields.releasedAt))}</span>)}
+    </div>
   </div>
 )
