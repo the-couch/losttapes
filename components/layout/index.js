@@ -2,9 +2,11 @@ import Header from 'sections/header'
 import Footer from 'sections/footer'
 
 export default ({children, type}) => (
-  <div className='container container--l'>
+  <div className='container'>
     <Header type={type} />
-    <div>{children}</div>
+    <div className='container--l container'>
+      <div>{children}</div>
+    </div>
     <Footer />
   </div>
 )
