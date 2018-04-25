@@ -34,7 +34,7 @@ export default  class extends Component {
           'header__reverse': this.props.type === 'film'
         })}>
           <div className='header__weight'>&nbsp;</div>
-          <Link href='/'><a className='ls1 caps'>video days</a></Link>
+          <Link href='/'><a className='ls1 caps small'>video days</a></Link>
           <div className='search header__weight'>
             <form className='f jcb' onSubmit={(e) => this.handleSearch(e)}>
               <input type='text' onChange={e => this.setState({search: e.target.value})} className='small' name='search' />

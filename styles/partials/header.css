@@ -4,7 +4,10 @@
     color: white;
   }
   &__weight {
-    width: 200px;
+    width: 140px;
+    @media (min-width: 600px) {
+      width: 200px;
+    }
   }
 }
 
