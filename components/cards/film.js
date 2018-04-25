@@ -25,7 +25,7 @@ export default (props) => (
       }
       @media (min-width: 68em) {
         .film__card {
-          width: 23%;
+          width: 18%;
         }
       }
     `}</style>
