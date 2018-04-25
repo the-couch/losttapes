@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Layout from 'components/layout'
 import ReactGA from 'react-ga'
+import Head from 'next/head'
 import 'isomorphic-fetch'
 import contentfulAPI from 'api/contentful'
 import cx from 'classnames'
@@ -132,6 +133,9 @@ export default class extends Component {
 
     return (
       <Layout type={`film`}>
+      <Head>
+        <title>{title} - video days</title>
+      </Head>
         <div className='video__single px2'>
           <div className='f jcb'>
             <div className='video__window rel'>
