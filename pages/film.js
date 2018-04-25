@@ -162,7 +162,7 @@ export default class extends Component {
           </div>
         </div>
         <div className='px2 mt2'>
-          <div className='block__header fill-h ac px1'><span className='ls1 caps'>Additional</span></div>
+          <div className='block__header fill-h ac px05'><span className='ls1 caps small'>Additional</span></div>
           <div className='f jcb fw'>
             {this.handleFilms(this.state.videos)}
           </div>

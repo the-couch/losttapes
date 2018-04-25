@@ -9,9 +9,10 @@ select {
   border-radius: 0;
   border: 1px solid var(--black);
   position: relative;
+  color: white;
   font-size: inherit;
   background-color: transparent;
-  padding: 0.7em 1.2em;
+  padding: 0.2em .5em;
 }
 input[type='text'],
 input[type='email'],
@@ -20,7 +21,7 @@ input[type='password'] {
 }
 input,
 select {
-  height: 65px;
+  /* height: 65px; */
 }
 textarea {
   max-width: 100%;

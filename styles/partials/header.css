@@ -3,6 +3,9 @@
   a {
     color: white;
   }
+  &__weight {
+    width: 200px;
+  }
 }
 
 .header__reverse {
