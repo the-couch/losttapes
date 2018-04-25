@@ -109,7 +109,7 @@ export default class extends Component {
         <div className='px2'>
           <div className='pb2 home__featured rel'>{this.handleFeatured(this.props.films)}</div>
           <div className='block__header fill-h ac px05 small'><span className='ls1 caps'>Films</span></div>
-          <div className='block__sort px05 small ar' onClick={() => this.handleSortingName()}>title: {this.state.name ? '~' : '?'}</div>
+          <div className='block__sort px05 small ar' onClick={() => this.handleSortingName()}>title {this.state.name ? '~' : '?'}</div>
           <div className='f jcb fw'>{this.handleFilms(this.state.films)}</div>
         </div>
       </Layout>
