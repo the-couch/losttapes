@@ -10,7 +10,7 @@ export default class extends Component {
     const response = await contentfulAPI.getEntries({
       content_type: 'film',
       'query': query.title,
-      include: 6
+      include: 10
     })
     return {
       films: response.items,
